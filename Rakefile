@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-DummyApp::Application.load_tasks
+Stack::Application.load_tasks

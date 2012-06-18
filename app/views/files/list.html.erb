@@ -1,0 +1,8 @@
+<h1>Files#list</h1>
+<p>Find me in app/views/files/list.html.erb</p>
+<% for file in @files %>
+  <% if file == '.' or file == '..'
+       next 
+     end %>
+  <%= file %></br>
+<% end %>
