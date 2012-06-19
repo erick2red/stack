@@ -2,6 +2,7 @@
 
 1. Requests from the client should always include
    the header "Accept: application/json"
+   - Preferred include the header: "Content-Type: application/json"
 2. Answer from the server will have this form
    { answer: ans_value, message: msg_value, data: data_value }
    - ans_value: (Mandatory) Integer representing the code of the answer. (look into

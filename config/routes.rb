@@ -4,10 +4,13 @@ Stack::Application.routes.draw do
   get 'files' => 'files#list'
 
   controller :users do
-    post 'create' => :create
-    delete 'delete' => :delete
-    put 'enable' => :enable
-    put 'disable' => :disable
+    post 'users' => :create
+    delete 'users/:id' => :delete
+    delete 'users' => :delete
+    put 'users/:id' => :update
+    put 'users' => :update
+    put 'users/enable' => :enable
+    put 'users/disable' => :disable
   end
 
   controller :sessions do

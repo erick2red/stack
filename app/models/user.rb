@@ -1,10 +1,9 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :username
+  attr_accessible :email, :name, :password, :username, :enabled
 
   validates :username, :presence => true, :uniqueness => true
   validates :email, :presence => true, :uniqueness => true
-  validates :password, :confirmation => true
-  attr_accessor :password_confirmation
+  validates :password, :presence => true
 
   class << self
     def authenticate_by_email(email, password)
