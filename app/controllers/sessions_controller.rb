@@ -23,7 +23,9 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    format.html { redirect_to files_url }
-    format.json { render :json => { :answer => 0 }, :status => 200}
+    respond_to do |format|
+      format.html { redirect_to files_url }
+      format.json { render :json => { :answer => 0 }, :status => 200}
+    end
   end
 end

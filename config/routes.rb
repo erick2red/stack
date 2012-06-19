@@ -1,5 +1,5 @@
 Stack::Application.routes.draw do
-  root :to => 'files#list'
+  #root :to => 'files#list'
 
   get 'files' => 'files#list'
 

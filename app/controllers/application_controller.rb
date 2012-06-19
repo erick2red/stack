@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
 
   protected
     def authorize
-      respond_to do |format|
-        unless User.find_by_id_and_enabled(session[:user_id], true)
+      unless User.find_by_id_and_enabled(session[:user_id], true)
+        respond_to do |format|
           format.html { redirect_to login_url, :notice => "Please log in" }
           format.json { render :json => { :answer => -1, :message => 'You are not logged. Please log' }, :status => 401 }
         end
