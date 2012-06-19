@@ -5,16 +5,15 @@ Stack::Application.routes.draw do
 
   controller :users do
     post 'users' => :create
+    get 'users/:id' => :show
+    get 'users' => :show
     delete 'users/:id' => :delete
     delete 'users' => :delete
     put 'users/:id' => :update
     put 'users' => :update
-    put 'users/enable' => :enable
-    put 'users/disable' => :disable
   end
 
   controller :sessions do
-    get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
   end
