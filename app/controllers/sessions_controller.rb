@@ -2,6 +2,10 @@ class SessionsController < ApplicationController
   respond_to :json
   skip_before_filter :authorize, :only => [:new, :create]
 
+  def new
+    respond_to :html
+  end
+
   def create
     auth = params[:name].include?('@') ? User.method(:authenticate_by_email) : User.method(:authenticate_by_username)
     if user = auth.call(params[:name], params[:password]) and user.enabled

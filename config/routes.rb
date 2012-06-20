@@ -1,8 +1,4 @@
 Stack::Application.routes.draw do
-  #root :to => 'files#list'
-
-  get 'files' => 'files#list'
-
   controller :users do
     post 'users' => :create
     get 'users/:id' => :show
@@ -14,9 +10,14 @@ Stack::Application.routes.draw do
   end
 
   controller :sessions do
+    get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
   end
 
+  controller :files do
+    get 'files' => :index
+    get 'files/list' => :list
+  end
   # See how all your routes lay out with "rake routes"
 end
