@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   skip_before_filter :authorize, :only => [:create]
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new params[:user]
 
     if @user.save
       render :json => { :answer => 0 }, :status => 200
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_id params[:id]
     if @user == nil
       render :json => { :answer => -4, :message => "User not found" }, :status => :unprocessable_entity
     else
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def delete
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_id params[:id]
     if @user == nil
       render :json => { :answer => -4, :message => "User not found" }, :status => :unprocessable_entity
     else
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by_id(params[:id])
+    @user = User.find_by_id params[:id]
     if @user == nil
       render :json => { :answer => -4, :message => "User not found" }, :status => :unprocessable_entity
     elsif @user.update_attributes(params[:user])
