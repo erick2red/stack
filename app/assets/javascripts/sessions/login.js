@@ -1,7 +1,9 @@
 (function($){
 	$('form').submit(function(){
-		if($(this).find('input[type=submit]').hasClass('disabled'))
+		if(!$(this).find('input[name="name"]').val().length){
+			$.noty({ text: 'no username' })
 			return false;
+		}
 		var user = {
 			'name': $.trim($(this).find('input[name="name"]').val()),
 			'password': $.trim($(this).find('input[name="password"]').val())
@@ -21,6 +23,5 @@
 		});
 		return false;
 	});
-	$('form [name="name"]').on('keyup', function(ev){ $('form input[type=submit]').toggleClass('disabled', $(this).val().length == 0);
-	}).on('keypress', function(ev){ if(ev.keyCode== 32) return false; return true; }).trigger('keyup');
+	$('form [name="name"]').on('keypress', function(ev){ if(ev.keyCode== 32) return false; return true; });
 })(jQuery);
