@@ -9,6 +9,6 @@ class FilesController < ApplicationController
     @files = Array.new
     Dir.new('/tmp/').each { |i| @files << i }
 
-    render :json => { :answer => 0, :data => @files } , :status => 200
+    render :json => { :answer => 0, :data => @files }
   end
 end
