@@ -2,8 +2,14 @@
 <html>
 <head>
   <title>Stack</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "bootstrap/bootstrap" %>
+  <%= stylesheet_link_tag "bootstrap/bootstrap-responsive" %>
+  <%= stylesheet_link_tag "noty/jquery.noty" %>
+  <%= yield :css %>
+  <%= javascript_include_tag "modernizr-2.5.3" %>
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "jquery.noty" %>
+  <%= yield :js %>
   <%= csrf_meta_tags %>
 </head>
 <body>

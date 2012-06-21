@@ -1,2 +1,27 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="container-fluid">
+  <div class="row-fluid">
+	<div class="span4">&nbsp;</div>
+	<div class="span4">
+	  <form class="modal" method="post">
+		  <div class="modal-header">
+			<h3>Welcome to Stack</h3>
+		  </div>
+		  <div class="modal-body">
+			<label for="name">username or email</label>
+			<input name="name" type="text" />
+			<label for="password" >password</label>
+			<input name="password" type="password" />
+		  </div>
+		  <div class="modal-footer">
+			<input type="submit" value="login" class="btn btn-primary disabled" />
+		  </div>
+	  </form>
+	</div>
+	<div class="span4">&nbsp;</div>
+  </div>
+</div>
+
+<% content_for :css do %>
+  <%= stylesheet_link_tag "sessions/login" %>
+<% end %>
+<%= javascript_include_tag "sessions/login" %>

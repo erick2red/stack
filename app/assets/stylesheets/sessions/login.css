@@ -1,0 +1,11 @@
+.modal {
+	position: relative;
+	margin-top: 30%;
+	left: 0;
+	margin-left: 0;
+	width: 100%;
+}
+
+.modal input[type=text], .modal input[type=password] {
+	width: 98%;
+}
