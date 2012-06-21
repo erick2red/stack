@@ -1,2 +1,8 @@
 <h1>Files#index</h1>
 <p>Find me in app/views/files/index.html.erb</p>
+
+<a href="../logout">logout</a>
+<% content_for :css do %>
+  <%= stylesheet_link_tag "files/main" %>
+<% end %>
+<%= javascript_include_tag "files/main" %>
