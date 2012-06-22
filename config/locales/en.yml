@@ -2,4 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  # views
   hello: "Hello world"
+  welcome: "Welcome to Stack"
+
+  # messages
+  malformed_params: "Malformed parameters"
+  wrong_auth:       "Wrong authentication details"
+  user_not_found:   "User not found"
+  not_logged:       "You are not logged. Please login."

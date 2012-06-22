@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
       unless User.find_by_id_and_enabled(session[:user_id], true)
         respond_to do |format|
           format.html { redirect_to login_url, :notice => "Please log in" }
-          format.json { render :json => { :answer => -1, :message => 'You are not logged. Please log' } }
+          format.json { render :json => { :answer => -1, :message => t(:not_logged) } }
         end
       end
     end
