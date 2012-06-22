@@ -3,8 +3,11 @@
 
 en:
   # views
-  hello: "Hello world"
-  welcome: "Welcome to Stack"
+  hello:            "Hello world"
+  welcome:          "Welcome to Stack"
+  username_email:   "Username or e-mail"
+  password:         "Password"
+  login:            "Login"
 
   # messages
   malformed_params: "Malformed parameters"
