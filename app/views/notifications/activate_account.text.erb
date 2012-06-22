@@ -1,0 +1,9 @@
+<% if not @user.name.nil? %>
+  Dear <%= @user.name %>
+<% else %>
+  Dear <%= @user.username %>
+<% end %>
+
+You have made an account in our site. Please click the link below to activate your account
+
+http://www.google.com

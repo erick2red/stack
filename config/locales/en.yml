@@ -14,3 +14,6 @@ en:
   wrong_auth:       "Wrong authentication details"
   user_not_found:   "User not found"
   not_logged:       "You are not logged. Please login."
+
+  # mail stuff
+  activate_account: "You have an account waiting to be activated at Stack"

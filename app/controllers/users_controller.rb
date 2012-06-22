@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     @user = User.new params[:user]
 
     if @user.save
+      Notifications.activate_account(@user).deliver
+
       render :json => { :answer => 0 }
     else
       render :json => { :answer => -3, :message => @user.errors.full_messages }
