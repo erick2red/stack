@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623025248) do
+ActiveRecord::Schema.define(:version => 20120623031202) do
 
   create_table "protected_actions", :force => true do |t|
     t.string   "token"
@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(:version => 20120623025248) do
     t.string   "name"
     t.string   "username"
     t.string   "email"
-    t.string   "password"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.boolean  "enabled",    :default => false
-    t.string   "language",   :default => "en"
+    t.string   "password_digest"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.boolean  "enabled",         :default => false
+    t.string   "language",        :default => "en"
   end
 
 end
