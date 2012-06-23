@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new params[:user]
+    @user.password = params[:password]
 
     if @user.save
       Notifications.activate_account(@user).deliver
@@ -16,8 +17,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id params[:id]
-    if @user == nil
-      render :json => { :answer => -4, :message => t(:user_not_found) }
+    if @user.nil?
+      render :json => { :answer => -4, :message => I18n.t(:user_not_found) }
     else
       render :json => { :answer => 0, :data => @user }
     end
@@ -25,8 +26,8 @@ class UsersController < ApplicationController
 
   def delete
     @user = User.find_by_id params[:id]
-    if @user == nil
-      render :json => { :answer => -4, :message => t(:user_not_found) }
+    if @user.nil?
+      render :json => { :answer => -4, :message => I18n.t(:user_not_found) }
     else
       @user.destroy
 
@@ -36,8 +37,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id params[:id]
-    if @user == nil
-      render :json => { :answer => -4, :message => t(:user_not_found) }
+    if @user.nil?
+      render :json => { :answer => -4, :message => I18n.t(:user_not_found) }
     elsif @user.update_attributes(params[:user])
       render :json => { :answer => 0 }
     end

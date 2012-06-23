@@ -10,6 +10,7 @@ en:
   login:            "Login"
 
   # messages
+  malformed_email:  "malformed address"
   malformed_params: "Malformed parameters"
   wrong_auth:       "Wrong authentication details"
   user_not_found:   "User not found"
