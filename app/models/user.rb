@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
                        :allow_nil => false,
                        :allow_blank => false
 
+  has_many :protected_actions
+
   class << self
     def authenticate_by_email(email, password)
       if user = find_by_email(email)
