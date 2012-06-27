@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   class << self
     def authenticate(name, password)
-      if name.include?('@')
+      if /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/.match(name)
         user = User.find_by_email(name)
       else
         user = User.find_by_username(name)
