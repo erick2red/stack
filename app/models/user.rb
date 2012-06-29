@@ -11,11 +11,12 @@ class User < ActiveRecord::Base
                     }
 
   validates :password, :presence => true,
-                       :length => { :minimum => 6 },
+                       :length => { :minimum => 8 },
                        :allow_nil => false,
                        :allow_blank => false
 
   has_many :protected_actions
+  has_and_belongs_to_many :groups
 
   class << self
     def authenticate(name, password)
@@ -28,5 +29,9 @@ class User < ActiveRecord::Base
         user
       end
     end
+  end
+
+  def is_admin
+    groups.exists?(:name => 'admin')
   end
 end

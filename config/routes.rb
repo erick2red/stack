@@ -9,6 +9,12 @@ Stack::Application.routes.draw do
     put 'users' => :update
   end
 
+  controller :groups do
+    post 'groups' => :create
+    get 'groups/:id' => :show
+    get 'groups' => :show
+  end
+
   controller :sessions do
     get 'login' => :new
     post 'login' => :create

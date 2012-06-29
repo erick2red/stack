@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+root = User.new(username: 'root', email: 'root@stack.com')
+root.password = 'root_pass'
+root.enabled = true
+root.save
+
+admin = Group.new
+admin.name = 'admin'
+admin.save
+
+root.groups << admin

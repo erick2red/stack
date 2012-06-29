@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623031202) do
+ActiveRecord::Schema.define(:version => 20120629151516) do
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "groups_users", :id => false, :force => true do |t|
+    t.string   "group_id"
+    t.string   "user_id"
+  end
 
   create_table "protected_actions", :force => true do |t|
     t.string   "token"

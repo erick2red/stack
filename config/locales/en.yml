@@ -14,6 +14,7 @@ en:
   malformed_params: "Malformed parameters"
   wrong_auth:       "Wrong authentication details"
   user_not_found:   "User not found"
+  group_not_found:  "Group not found"
   not_logged:       "You are not logged. Please login."
 
   # mail stuff
